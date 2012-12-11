@@ -1,0 +1,9 @@
+diff -Naur Digest-Perl-MD5-1.8.orig/lib/Digest/Perl/MD5.pm Digest-Perl-MD5-1.8/lib/Digest/Perl/MD5.pm
+--- Digest-Perl-MD5-1.8.orig/lib/Digest/Perl/MD5.pm	2012-11-22 10:54:11.991490630 -0500
++++ Digest-Perl-MD5-1.8/lib/Digest/Perl/MD5.pm	2012-11-22 10:54:15.325490814 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/false
++#! /bin/false
+ #
+ # $Id: MD5.pm,v 1.23 2004/08/27 20:28:25 lackas Exp $
+ #
