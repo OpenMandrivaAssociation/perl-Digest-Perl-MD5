@@ -17,6 +17,7 @@ Source0:    http://www.cpan.org/modules/by-module/OLE/%{upstream_name}-%{upstrea
 Patch0:     Digest-Perl-MD5-1.8-false-path.patch
 
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	perl-devel
 
 %description
