@@ -1,19 +1,17 @@
 %define upstream_name    Digest-Perl-MD5
-%define upstream_version 1.8
-
 %if %{_use_internal_dependency_generator}
 %define __noautoreq '/bin/false'
 %endif
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	1.8
+Release:	6
 
 Summary:	Perl implementation of Ron Rivests MD5 Algorithm
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:    http://www.cpan.org/modules/by-module/OLE/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}/
+Source0:    http://www.cpan.org/modules/by-module/OLE/%{upstream_name}-%{version}.tar.gz
 Patch0:     Digest-Perl-MD5-1.8-false-path.patch
 
 BuildArch:	noarch
@@ -32,7 +30,7 @@ This module is only useful for:
 
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 %patch0 -p1
 
 # perl path hack
