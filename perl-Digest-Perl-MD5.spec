@@ -6,7 +6,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.91
-Release:	1
+Release:	2
 
 Summary:	Perl implementation of Ron Rivests MD5 Algorithm
 License:	GPL+ or Artistic
@@ -31,7 +31,7 @@ This module is only useful for:
 
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n Digest-Perl-MD5-1.91
 %patch -P0 -p1
 
 # perl path hack
