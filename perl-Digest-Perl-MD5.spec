@@ -6,14 +6,13 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.91
-Release:	5
+Release:	6
 
 Summary:	Perl implementation of Ron Rivests MD5 Algorithm
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/%{upstream_name}/
 Source0:	https://cpan.metacpan.org/authors/id/D/DE/DELTA/Digest-Perl-MD5-1.91.tar.gz
-Patch0:     Digest-Perl-MD5-1.8-false-path.patch
 
 BuildArch:	noarch
 BuildRequires:	make
@@ -32,7 +31,6 @@ This module is only useful for:
 
 %prep
 %setup -q -n Digest-Perl-MD5-1.91
-%patch -P0 -p1
 
 # perl path hack
 find . -type f | xargs perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/perl|g"
@@ -41,11 +39,14 @@ find . -type f | xargs perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/perl
 perl Makefile.PL INSTALLDIRS=vendor 
 %make OPTIMIZE="%{optflags}"
 
+%check
+make test || :
+
 %install
 %makeinstall_std
 
 %files
-%doc README
+%doc META.yml README.md
 %{perl_vendorlib}/Digest
 %{_mandir}/*/*
 
