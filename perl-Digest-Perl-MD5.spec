@@ -6,7 +6,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.91
-Release:	33
+Release:	34
 
 Summary:	Perl implementation of Ron Rivests MD5 Algorithm
 License:	GPL+ or Artistic
