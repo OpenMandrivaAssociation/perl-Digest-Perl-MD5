@@ -6,7 +6,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.91
-Release:	49
+Release:	50
 
 Summary:	Perl implementation of Ron Rivests MD5 Algorithm
 License:	GPL+ or Artistic
@@ -17,6 +17,7 @@ Source0:	https://cpan.metacpan.org/authors/id/D/DE/DELTA/Digest-Perl-MD5-1.91.ta
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl-devel
+BuildRequires:	perl(Test)
 
 %description
 This is not an interface (like Digest::MD5) but a Perl implementation of MD5. 
@@ -45,6 +46,8 @@ make test || :
 %install
 %makeinstall_std
 
+find %{buildroot} -type f -name '*.pm' -exec chmod -x {} +
+if [ -d %{buildroot}%{_bindir} ]; then find %{buildroot}%{_bindir} -type f -exec chmod 755 {} +; fi
 %files
 %doc META.yml README.md
 %{perl_vendorlib}/Digest
